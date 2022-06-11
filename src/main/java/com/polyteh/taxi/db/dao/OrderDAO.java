@@ -239,6 +239,33 @@ public class OrderDAO {
 
         return order;
     }
+    /**
+     * Method which delete order
+     *
+     * @see Order
+     */
+    public void deleteOrder(String orderId){
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+
+        try {
+            connection = DBManager.getInstance().getConnection();
+            preparedStatement = connection.prepareStatement(DELETE_ORDER);
+
+            preparedStatement.setInt(1, Integer.parseInt(orderId));
+
+            preparedStatement.executeUpdate();
+
+            DBManager.getInstance().commitAndClose(connection);
+        } catch (SQLException e) {
+            LOGGER.error("Cannot get orders", e);
+            DBManager.getInstance().rollbackAndClose(connection);
+        } finally {
+            DBManager.getInstance().close(resultSet);
+            DBManager.getInstance().close(preparedStatement);
+        }
+    }
 
     /**
      * Method which adds Cars ID to Order object

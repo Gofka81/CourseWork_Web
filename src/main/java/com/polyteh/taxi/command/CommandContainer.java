@@ -34,6 +34,7 @@ public class CommandContainer {
         commands.put("createOrder", new CreateOrderCommand());
         commands.put("analogOrder", new AnalogOrderCommand());
         commands.put("getCarInfo", new GetCarInfoCommand());
+        commands.put("deleteOrder", new DeleteOrderCommand());
 
         //Admin commands
         commands.put("getOrdersList", new GetOrdersListCommand());
