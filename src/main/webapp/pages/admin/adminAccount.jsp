@@ -59,7 +59,7 @@
                         </td>
                         <td><fmt:message key='${order.getArrival()}'/></td>
                         <td>${order.getOrderingDate()}</td>
-                        <td>${order.getPrice()}</td>
+                        <td>${order.getPrice()}&#8372;</td>
                         <td>${order.getNumberOfPassengers()}</td>
                         <td>
                             <a href="controller?command=getCarInfo&orderId=${order.getId()}" class="more">

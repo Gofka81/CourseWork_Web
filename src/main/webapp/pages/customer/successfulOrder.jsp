@@ -19,7 +19,17 @@
             <div class="details">
                 <p><fmt:message key='user.from'/>: <fmt:message key='${order.getDeparture()}'/></p>
                 <p><fmt:message key='user.to'/>: <fmt:message key='${order.getArrival()}'/></p>
-                <p><fmt:message key='menu.price'/>: ${order.getPrice()}</p>
+                <p><fmt:message key='menu.price'/>: ${order.getPrice()}&#8372;</p>
+                <p><fmt:message key='user.discount'/>:
+                <c:choose>
+                    <c:when test="${account.isDiscount() == true}">
+                        <fmt:message key='user.discountTrue'/>
+                    </c:when>
+                    <c:when test="${account.isDiscount() == false}">
+                        <fmt:message key='user.discountFalse'/>
+                    </c:when>
+                </c:choose>
+                </p>
             </div>
             <div class="input_grp">
                 <button class="selectBox" type="button">

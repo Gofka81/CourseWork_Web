@@ -18,7 +18,6 @@
 <div class="content">
 
     <div class="container">
-
         <h2 class="mb-5"><fmt:message key='user.info'/>, ${account.getLogin()}</h2>
         <a href="<c:url value="/controller?command=getOrdersList&refresh=refresh"/>">
             <fmt:message key='admin.refresh'/>
@@ -37,7 +36,6 @@
                             key='menu.price'/></a></th>
                     <th scope="col"><fmt:message key='menu.numberofpassengers'/></th>
                     <th scope="col"><fmt:message key='menu.cars'/></th>
-                    <
                 </tr>
                 </thead>
 
@@ -50,7 +48,7 @@
                         </td>
                         <td><fmt:message key='${order.getArrival()}'/></td>
                         <td>${order.getOrderingDate()}</td>
-                        <td>${order.getPrice()}</td>
+                        <td>${order.getPrice()}&#8372;</td>
                         <td>${order.getNumberOfPassengers()}</td>
                         <td>
                             <a href="controller?command=getCarInfo&orderId=${order.getId()}" class="more">

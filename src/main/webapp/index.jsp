@@ -34,6 +34,7 @@
                 <a class="btn btn-light action-button" href="pages/entrance/entrance.jsp" class="login"><fmt:message key='menu.login'/></a>
             </c:otherwise>
           </c:choose>
+          <img src="https://i.ibb.co/7VHJhzP/MainMenu.png" alt="MainMenu" width="500" height="500">
         </div>
         </div>
       </div>
