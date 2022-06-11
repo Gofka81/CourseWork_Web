@@ -1,6 +1,7 @@
 package com.polyteh.taxi.filters;
 
 import com.polyteh.taxi.Path;
+import com.polyteh.taxi.command.CommandContainer;
 import com.polyteh.taxi.db.entity.Account;
 
 import javax.servlet.*;
@@ -22,7 +23,7 @@ public class CommandFilter implements Filter {
      * Users (client, administrator or unauthorized user) have their own actions to help use the program
      * these actions were described as commands and sorted in the containers below
      *
-     * @see com.polyteh.taxi.command.CommandContainer
+     * @see CommandContainer
      */
 
     //Everyone has access to these commands

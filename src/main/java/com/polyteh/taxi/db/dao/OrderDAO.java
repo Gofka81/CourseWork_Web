@@ -1,7 +1,10 @@
 package com.polyteh.taxi.db.dao;
 
+import com.polyteh.taxi.command.client.CheckOrderCommand;
+import com.polyteh.taxi.command.common.GetCarInfoCommand;
 import com.polyteh.taxi.db.DBManager;
 import com.polyteh.taxi.db.entity.Order;
+import com.polyteh.taxi.utils.PriceCalculator;
 import org.apache.log4j.Logger;
 
 import java.sql.*;
@@ -262,7 +265,7 @@ public class OrderDAO {
     /**
      * Method that helps to obtain information about cars for a specific order
      *
-     * @see com.polyteh.taxi.command.common.GetCarInfoCommand
+     * @see GetCarInfoCommand
      */
     public List<Integer> getCarIdFromOrder(int orderId) {
         List<Integer> carIdList = new ArrayList<>();
@@ -294,8 +297,8 @@ public class OrderDAO {
     /**
      * Method that helps to obtain information about route distance for a specific order.
      *
-     * @see com.polyteh.taxi.command.client.CheckOrderCommand
-     * @see com.polyteh.taxi.utils.PriceCalculator
+     * @see CheckOrderCommand
+     * @see PriceCalculator
      */
     public double getRouteDistance(String departure, String arrival) {
         double distance = 0;

@@ -4,6 +4,7 @@ import com.polyteh.taxi.command.admin.ChangeCarStatusCommand;
 import com.polyteh.taxi.command.admin.GetCarsListCommand;
 import com.polyteh.taxi.command.client.*;
 import com.polyteh.taxi.command.common.*;
+import com.polyteh.taxi.controller.FrontController;
 import org.apache.log4j.Logger;
 
 import java.util.Map;
@@ -13,7 +14,7 @@ import java.util.TreeMap;
  * Command Container holds all commands and provides access to them.
  *
  * @author L. Antonyk
- * @see com.polyteh.taxi.controller.FrontController
+ * @see FrontController
  */
 public class CommandContainer {
     private static final Logger LOGGER = Logger.getLogger(CommandContainer.class);

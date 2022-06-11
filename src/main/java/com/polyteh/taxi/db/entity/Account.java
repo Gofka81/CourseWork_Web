@@ -1,5 +1,7 @@
 package com.polyteh.taxi.db.entity;
 
+import com.polyteh.taxi.utils.PriceCalculator;
+
 import java.util.Objects;
 
 /**
@@ -22,7 +24,7 @@ public class Account extends Entity {
     /**
      * Every second taxi ride costs 20% less
      *
-     * @see com.epam.taxi.utils.PriceCalculator
+     * @see PriceCalculator
      */
     private boolean discount;
 

@@ -2,6 +2,7 @@ package com.polyteh.taxi.db.dao;
 
 import com.polyteh.taxi.db.DBManager;
 import com.polyteh.taxi.db.entity.Account;
+import com.polyteh.taxi.utils.PriceCalculator;
 import org.apache.log4j.Logger;
 
 import java.sql.*;
@@ -107,7 +108,7 @@ public class AccountDAO {
      *
      * @param account the account which discount want to update.
      * @see Account
-     * @see com.polyteh.taxi.utils.PriceCalculator
+     * @see PriceCalculator
      */
     public void updateAccountDiscountStatus(Account account) {
         Connection connection = null;
