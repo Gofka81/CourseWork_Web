@@ -150,7 +150,7 @@ CREATE TABLE IF NOT EXISTS `taxi`.`account_has_order` (
   CONSTRAINT `fk_account_has_order_order1`
     FOREIGN KEY (`order_id`)
     REFERENCES `taxi`.`order` (`id`)
-    ON DELETE NO ACTION
+    ON DELETE CASCADE
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
@@ -162,6 +162,7 @@ CREATE TABLE IF NOT EXISTS `taxi`.`car_has_language` (
   `car_id` INT NOT NULL,
   `language_id` INT NOT NULL,
   `description` VARCHAR(100) NOT NULL,
+   `driver_name` VARCHAR(30) NOT NULL,
   PRIMARY KEY (`car_id`, `language_id`),
   INDEX `fk_car_has_language_language1_idx` (`language_id` ASC) VISIBLE,
   INDEX `fk_car_has_language_car1_idx` (`car_id` ASC) VISIBLE,
@@ -177,9 +178,7 @@ CREATE TABLE IF NOT EXISTS `taxi`.`car_has_language` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-INSERT INTO account VALUES(DEFAULT, 'admin', 'admin@admin', '0cc175b9c0f1b6a831c399e269772661', '1234567890',  DEFAULT, true);
-INSERT INTO account VALUES(DEFAULT, 'user', 'user@user', '7b774effe4a349c6dd82ad4f4f21d34c', '0987654321',  DEFAULT, DEFAULT);
-INSERT INTO account VALUES(DEFAULT, 'user1', 'user1@user', '7b774effe4a349c6dd82ad4f4f21d34c', '0887654321',  DEFAULT, DEFAULT);
+INSERT INTO account VALUES(DEFAULT, 'Gofka81', 'fasadgiven@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '1234567891',  DEFAULT, true);
 
 INSERT INTO language VALUES (default, 'en', 'English');
 INSERT INTO language VALUES (default, 'uk', 'Українська');
@@ -210,46 +209,46 @@ INSERT INTO car VALUES (DEFAULT, 'to_order', 4);
 INSERT INTO car VALUES (DEFAULT, 'to_order', 4);
 INSERT INTO car VALUES (DEFAULT, 'to_order', 4);
 
-insert into  car_has_language VALUES (1, 1, 'Honda Insight red colour');
-insert into  car_has_language VALUES (1, 2, 'Honda Insight червоного кольору');
-insert into  car_has_language VALUES (2, 1, 'Toyota Prius yellow colour');
-insert into  car_has_language VALUES (2, 2, 'Toyota Prius жовтого кольору');
-insert into  car_has_language VALUES (3, 1, 'Hyundai Ioniq blue colour');
-insert into  car_has_language VALUES (3, 2, 'Hyundai Ioniq синього кольору');
-insert into  car_has_language VALUES (4, 1, 'Toyota Corolla green colour');
-insert into  car_has_language VALUES (4, 2, 'Toyota Corolla зеленого кольору');
-insert into  car_has_language VALUES (5, 1, 'Hyundai Elantra pink colour');
-insert into  car_has_language VALUES (5, 2, 'Hyundai Elantra рожевого кольору');
-insert into  car_has_language VALUES (6, 1, 'Honda Accord grey colour');
-insert into  car_has_language VALUES (6, 2, 'Honda Accord сірого кольору');
-insert into  car_has_language VALUES (7, 1, 'Toyota Camry white colour');
-insert into  car_has_language VALUES (7, 2, 'Toyota Camry білого кольору');
-insert into  car_has_language VALUES (8, 1, 'Audi A6 red colour');
-insert into  car_has_language VALUES (8, 2, 'Audi A6 червоного кольору');
-insert into  car_has_language VALUES (9, 1, 'Audi Q7 yellow colour');
-insert into  car_has_language VALUES (9, 2, 'Audi Q7 жовтого кольору');
-insert into  car_has_language VALUES (10, 1, 'Audi S6 blue colour');
-insert into  car_has_language VALUES (10, 2, 'Audi S6 синього кольору');
-insert into  car_has_language VALUES (11, 1, 'BMW X3 green colour');
-insert into  car_has_language VALUES (11, 2, 'BMW X3 зеленого кольору');
-insert into  car_has_language VALUES (12, 1, 'BMW M5 pink colour');
-insert into  car_has_language VALUES (12, 2, 'BMW M5 рожевого кольору');
-insert into  car_has_language VALUES (13, 1, 'BMW B7 grey colour');
-insert into  car_has_language VALUES (13, 2, 'BMW B7 сірого кольору');
-insert into  car_has_language VALUES (14, 1, 'Tesla Model 3 red colour');
-insert into  car_has_language VALUES (14, 2, 'Tesla Model 3 червоного кольору');
-insert into  car_has_language VALUES (15, 1, 'Skoda Superb IV yellow colour');
-insert into  car_has_language VALUES (15, 2, 'Skoda Superb IV жовтого кольору');
-insert into  car_has_language VALUES (16, 1, 'Volvo XC40 blue colour');
-insert into  car_has_language VALUES (16, 2, 'Volvo XC40 синього кольору');
-insert into  car_has_language VALUES (17, 1, 'Range Rover Evoque green colour');
-insert into  car_has_language VALUES (17, 2, 'Range Rover Evoque зеленого кольору');
-insert into  car_has_language VALUES (18, 1, 'Ford Transit Connect pink colour');
-insert into  car_has_language VALUES (18, 2, 'Ford Transit Connect рожевого кольору');
-insert into  car_has_language VALUES (19, 1, 'Toyota Sienna grey colour');
-insert into  car_has_language VALUES (19, 2, 'Toyota Sienna сірого кольору');
-insert into  car_has_language VALUES (20, 1, 'Dodge Grand Caravan white colour');
-insert into  car_has_language VALUES (20, 2, 'Dodge Grand Caravan білого кольору');
+insert into  car_has_language VALUES (1, 1, 'Honda Insight red colour', 'Petro');
+insert into  car_has_language VALUES (1, 2, 'Honda Insight червоного кольору', 'Петро');
+insert into  car_has_language VALUES (2, 1, 'Toyota Prius yellow colour', 'Artem');
+insert into  car_has_language VALUES (2, 2, 'Toyota Prius жовтого кольору', 'Артем');
+insert into  car_has_language VALUES (3, 1, 'Hyundai Ioniq blue colour', 'Maksym');
+insert into  car_has_language VALUES (3, 2, 'Hyundai Ioniq синього кольору', 'Максим');
+insert into  car_has_language VALUES (4, 1, 'Toyota Corolla green colour', 'Zoreslava');
+insert into  car_has_language VALUES (4, 2, 'Toyota Corolla зеленого кольору', 'Зореслава');
+insert into  car_has_language VALUES (5, 1, 'Hyundai Elantra pink colour', 'Rostyk');
+insert into  car_has_language VALUES (5, 2, 'Hyundai Elantra рожевого кольору', 'Ростик');
+insert into  car_has_language VALUES (6, 1, 'Honda Accord grey colour', 'Vitaliy');
+insert into  car_has_language VALUES (6, 2, 'Honda Accord сірого кольору', 'Віталік');
+insert into  car_has_language VALUES (7, 1, 'Toyota Camry white colour', 'Taras');
+insert into  car_has_language VALUES (7, 2, 'Toyota Camry білого кольору', 'Тарас');
+insert into  car_has_language VALUES (8, 1, 'Audi A6 red colour', 'Petro');
+insert into  car_has_language VALUES (8, 2, 'Audi A6 червоного кольору', 'Петро');
+insert into  car_has_language VALUES (9, 1, 'Audi Q7 yellow colour', 'Artem');
+insert into  car_has_language VALUES (9, 2, 'Audi Q7 жовтого кольору', 'Артем');
+insert into  car_has_language VALUES (10, 1, 'Audi S6 blue colour', 'Maksym');
+insert into  car_has_language VALUES (10, 2, 'Audi S6 синього кольору', 'Максим');
+insert into  car_has_language VALUES (11, 1, 'BMW X3 green colour', 'Zoreslava');
+insert into  car_has_language VALUES (11, 2, 'BMW X3 зеленого кольору', 'Зореслава');
+insert into  car_has_language VALUES (12, 1, 'BMW M5 pink colour', 'Rostyk');
+insert into  car_has_language VALUES (12, 2, 'BMW M5 рожевого кольору', 'Ростик');
+insert into  car_has_language VALUES (13, 1, 'BMW B7 grey colour', 'Vitaliy');
+insert into  car_has_language VALUES (13, 2, 'BMW B7 сірого кольору', 'Віталік');
+insert into  car_has_language VALUES (14, 1, 'Tesla Model 3 red colour', 'Taras');
+insert into  car_has_language VALUES (14, 2, 'Tesla Model 3 червоного кольору', 'Тарас');
+insert into  car_has_language VALUES (15, 1, 'Skoda Superb IV yellow colour', 'Petro');
+insert into  car_has_language VALUES (15, 2, 'Skoda Superb IV жовтого кольору', 'Петро');
+insert into  car_has_language VALUES (16, 1, 'Volvo XC40 blue colour', 'Artem');
+insert into  car_has_language VALUES (16, 2, 'Volvo XC40 синього кольору', 'Артем');
+insert into  car_has_language VALUES (17, 1, 'Range Rover Evoque green colour', 'Zoreslava');
+insert into  car_has_language VALUES (17, 2, 'Range Rover Evoque зеленого кольору', 'Зореслава');
+insert into  car_has_language VALUES (18, 1, 'Ford Transit Connect pink colour', 'Rostyk');
+insert into  car_has_language VALUES (18, 2, 'Ford Transit Connect рожевого кольору', 'Ростик');
+insert into  car_has_language VALUES (19, 1, 'Toyota Sienna grey colour', 'Vitaliy');
+insert into  car_has_language VALUES (19, 2, 'Toyota Sienna сірого кольору', 'Віталік');
+insert into  car_has_language VALUES (20, 1, 'Dodge Grand Caravan white colour', 'Taras');
+insert into  car_has_language VALUES (20, 2, 'Dodge Grand Caravan білого кольору', 'Тарас');
 
 INSERT INTO route VALUES (DEFAULT, 'Railway_Station', 'Market_Square', 3.23);
 INSERT INTO route VALUES (DEFAULT, 'Railway_Station', 'Park_of_Culture', 4.03);

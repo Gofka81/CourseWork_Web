@@ -41,7 +41,9 @@ public class CarDAO {
 
             while (resultSet.next()) {
                 Car car = createCarWithAttributes(resultSet);
-                car.setDescription(getCarDescription(car, language));
+                String[] values = getCarDescription(car, language).split(",");
+                car.setDescription(values[0]);
+                car.setDriverName(values[1]);
                 carList.add(car);
             }
             DBManager.getInstance().commitAndClose(connection);
@@ -76,7 +78,9 @@ public class CarDAO {
 
             if (resultSet.next()) {
                 car = createCarWithAttributes(resultSet);
-                car.setDescription(getCarDescription(car, language));
+                String[] values = getCarDescription(car, language).split(",");
+                car.setDescription(values[0]);
+                car.setDriverName(values[1]);
             }
 
             DBManager.getInstance().commitAndClose(connection);
@@ -111,7 +115,9 @@ public class CarDAO {
 
             if (resultSet.next()) {
                 car = createCarWithAttributes(resultSet);
-                car.setDescription(getCarDescription(car, language));
+                String[] values = getCarDescription(car, language).split(",");
+                car.setDescription(values[0]);
+                car.setDriverName(values[1]);
             }
 
             DBManager.getInstance().commitAndClose(connection);
@@ -146,7 +152,9 @@ public class CarDAO {
 
             while (resultSet.next()) {
                 Car car = createCarWithAttributes(resultSet);
-                car.setDescription(getCarDescription(car, language));
+                String[] values = getCarDescription(car, language).split(",");
+                car.setDescription(values[0]);
+                car.setDriverName(values[1]);
                 carsList.add(car);
             }
 
@@ -222,7 +230,7 @@ public class CarDAO {
             resultSet = preparedStatement.executeQuery();
 
             if (resultSet.next()) {
-                carDescription = resultSet.getString(1);
+                carDescription = resultSet.getString(1) + "," + resultSet.getString(2);
             }
 
             DBManager.getInstance().commitAndClose(connection);

@@ -37,6 +37,7 @@
                     <form action= <%= request.getContextPath() %>/controller method="get">
                         <button  class="btn btn-light action-button" role="button" name="command" value="getOrdersList"><fmt:message key='menu.account'/></button>
                     </form>
+                    &nbsp;
                     <a class="btn btn-light action-button" role="button" href="controller?command=logout"><fmt:message key='menu.logout'/></a>
                 </c:otherwise>
             </c:choose>

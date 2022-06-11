@@ -29,7 +29,7 @@ public class CommandFilter implements Filter {
     //Everyone has access to these commands
     private final String[] entranceCommand = {"login", "registration", "changeLanguage"};
     //Only authorized client can use these commands
-    private final String[] clientCommand = {"createOrder", "analogOrder", "checkOrder"};
+    private final String[] clientCommand = {"createOrder", "analogOrder", "checkOrder", "deleteOrder"};
     //Commands only for admin
     private final String[] adminCommand = {"getCarsList", "changeCarStatus"};
     //Common commands for authorized users (Client and Admin)

@@ -58,8 +58,8 @@
                             </a>
                         </td>
                         <td>
-                            <a href="controller?command=deleteOrder&orderId=${order.getId()}" class="more">
-                                <fmt:message key=' '/>
+                            <a href="controller?command=deleteOrder&refresh=refresh&orderId=${order.getId()}" class="more">
+                                <fmt:message key='user.delete'/>
                             </a>
                         </td>
                     </tr>

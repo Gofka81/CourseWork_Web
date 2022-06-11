@@ -43,6 +43,9 @@ public class SqlRequest {
             "SELECT id FROM route WHERE departure = ? AND arrival = ?";
     public static final String GET_CAR_ID_FROM_ORDER =
             "SELECT car_id FROM order_has_car WHERE order_id = ?";
+
+    public static final String DELETE_ORDER =
+            "DELETE FROM `order` WHERE id = ?";
     /**
      * SQL commands for CarDAO.
      *
@@ -66,7 +69,7 @@ public class SqlRequest {
     public static final String UPDATE_CAR_STATUS =
             "UPDATE car SET status = ? WHERE id = ?";
     public static final String GET_CAR_DESCRIPTION =
-            "SELECT description FROM car_has_language \n" +
+            "SELECT description, driver_name FROM car_has_language \n" +
                     "WHERE car_id = ? AND language_id = \n" +
                     "(SELECT id FROM language WHERE short_name = ?)";
 
