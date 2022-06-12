@@ -179,6 +179,7 @@ CREATE TABLE IF NOT EXISTS `taxi`.`car_has_language` (
 ENGINE = InnoDB;
 
 INSERT INTO account VALUES(DEFAULT, 'Gofka81', 'fasadgiven@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '1234567891',  DEFAULT, true);
+INSERT INTO account VALUES(DEFAULT, 'Taras', 'liubomyr.antonyk.knm.2020@lpnu.ua', 'fcea920f7412b5da7be0cf42b8c93759', '1234567890', DEFAULT, DEFAULT)
 
 INSERT INTO language VALUES (default, 'en', 'English');
 INSERT INTO language VALUES (default, 'uk', 'Українська');
@@ -271,12 +272,12 @@ INSERT INTO `order` VALUES (DEFAULT, 10, 21, 3, DEFAULT);
 INSERT INTO `order` VALUES (DEFAULT, 4, 781, 3, DEFAULT);
 INSERT INTO `order` VALUES (DEFAULT, 11, 289, 3, DEFAULT);
 
-INSERT INTO account_has_order VALUES (3, 1);
+INSERT INTO account_has_order VALUES (1, 1);
 INSERT INTO account_has_order VALUES (2, 2);
 INSERT INTO account_has_order VALUES (2, 3);
-INSERT INTO account_has_order VALUES (2, 4);
+INSERT INTO account_has_order VALUES (1, 4);
 INSERT INTO account_has_order VALUES (2, 5);
-INSERT INTO account_has_order VALUES (2, 6);
+INSERT INTO account_has_order VALUES (1, 6);
 INSERT INTO account_has_order VALUES (2, 7);
 
 INSERT INTO order_has_car VALUES (1, 1);
